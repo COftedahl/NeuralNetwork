@@ -192,7 +192,9 @@ public class NNAI {
             newScoredNet.setNN(newNet);
             newNetArray[currChild] = newScoredNet;
         }
-
+        nns = newNetArray;
+        chanceToExplore = chanceToExplore * (1 - explorationDecayRate);
+        currGen += 1;
     }
 
     public void sortNets() {
